@@ -1,4 +1,4 @@
-/*
+
 --- Creating the dimension table
 CREATE TABLE dim_customer(
     customers_id SERIAL PRIMARY KEY,
@@ -28,7 +28,7 @@ CREATE TABLE dim_store(
 */
 
 
-/*
+
 ---creating the facts table
 CREATE TABLE sales_facts(
     sales_id SERIAL PRIMARY KEY,
@@ -43,20 +43,20 @@ CREATE TABLE sales_facts(
     FOREIGN KEY (date_id) REFERENCES dim_date(date_id),
     FOREIGN KEY (store_id) REFERENCES dim_store(store_id)
 );
-*/
 
 
-/*
+
+
 ---altering the table dim_stock and dim_store
 ALTER TABLE dim_stock
 ADD PRIMARY KEY (stock_id);
 
 ALTER TABLE dim_store
 ADD PRIMARY KEY (store_id);
-*/
 
 
-/*
+
+
 ----- checking the constraint type of a single column
 SELECT 
     tc.constraint_type,
@@ -70,7 +70,7 @@ WHERE tc.table_name = 'dim_stock';
 
 
 
-/*
+
 ---inserting into dim_customers tables
 INSERT INTO dim_customer(customers_code, location)
 SELECT customer_id, country 
@@ -85,12 +85,12 @@ FROM online_retail;
 INSERT INTO dim_store(region)
 SELECT country
 FROM online_retail;
-*/
+
 
 ---inseritng into the sales_fact table
---SELECT column_name, data_type
---FROM information_schema.columns
---WHERE table_name='dim_stock'
+SELECT column_name, data_type
+FROM information_schema.columns
+WHERE table_name='dim_stock'
 
 
 ---inserting into the facts table
