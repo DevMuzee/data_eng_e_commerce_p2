@@ -5,7 +5,7 @@ conn= psycopg2.connect(
         database='e_commerce',
         host= 'dep-little-frog-a18fufg1-pooler.ap-southeast-1.aws.neon.tech',
         user='neondb_owner',
-        password= 'npg_IW4k2LGFZcHD',
+        password= '*****************',
         port=5432
 )
 
